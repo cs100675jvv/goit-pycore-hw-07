@@ -5,11 +5,7 @@ from _classes.record import Record
 
 @input_error_birthday
 def add_birthday(args, book: AddressBook):
-    # self.birthday = Birthday(birthday)
-    # self.birthday.validate()
-
     name, birthday, *_ = args
-    birthday_obj = Birthday(birthday)
     record = book.find(name)
-    record.add_birthday(birthday_obj)
+    record.add_birth(birthday)
     return print(f"Birthday for contact {name} updated.")

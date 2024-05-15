@@ -9,7 +9,7 @@ class Record:
 
     def add_phone(self, phone):
         phone_field = Phone(phone)
-        phone_field.validate()
+        # phone_field.validate()
         self.phones.append(phone_field)
 
     def delete_phone(self, phone):
@@ -19,11 +19,11 @@ class Record:
                 return
         raise ValueError("Phone number not found.")
 
-    def edit_phone(self, old_phone, new_phone):
+    def edit_phone(self, phone, new_phone):
         for phone_field in self.phones:
-            if phone_field.value == old_phone:
+            if phone_field.value == phone:
                 phone_field.value = new_phone
-                phone_field.validate()
+                # phone_field.validate()
                 return
         raise ValueError("Phone number not found.")
 
@@ -32,6 +32,11 @@ class Record:
             if phone_field.value == phone:
                 return phone
         raise ValueError("Phone number not found.")
+    
+    def add_birth(self, birthday):
+        birthday_obj = Birthday(birthday)
+        self.birthday = birthday_obj
+        return print(f"Birthday for contact {name} updated.")
     
 
     def __str__(self):
