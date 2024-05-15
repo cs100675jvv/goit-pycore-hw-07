@@ -1,4 +1,4 @@
-from _classes.records import Record
+from _classes.record import Record
 from collections import UserDict
 
 class AddressBook(UserDict):

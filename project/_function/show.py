@@ -1,7 +1,7 @@
 from _decorator.decorator import input_error_name, input_error_birthday
 from _function.upcoming_birthdays import get_upcoming_birthdays
 from _classes.adress_book import AddressBook
-from _classes.records import Record
+from _classes.record import Record
 
 
 @input_error_name
