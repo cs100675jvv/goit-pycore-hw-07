@@ -1,5 +1,4 @@
 from _classes.adress_book import AddressBook
-# from _classes.record import Record
 from _function.parse import parse_input
 from _function.add_contact import add_contact
 from _function.add_birthday import add_birthday

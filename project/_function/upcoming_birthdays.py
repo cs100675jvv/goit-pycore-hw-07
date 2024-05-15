@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
-# from _classes.adress_book import AddressBook
-# from _classes.record import Record
+
 
 def get_upcoming_birthdays(book):
     today = datetime.today().date()  

@@ -1,6 +1,5 @@
 from _decorator.decorator import input_error_birthday
 from _classes.adress_book import AddressBook
-# from _classes.record import Record
 
 
 @input_error_birthday
