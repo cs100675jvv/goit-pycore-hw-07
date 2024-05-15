@@ -36,6 +36,37 @@ def input_error(func):
 
     return inner
 
+def input_error_phones(func):
+    def inner(*args, **kwargs):
+        try:
+            name, phone, new_phone, *_ = args[0]
+            
+            if not re.match(r'^[a-zA-Za-яА-Я]+$', name): 
+                raise NameValidationError
+
+            if not re.match(r'^\d{10,}$', phone):
+                raise PhoneValidationError
+            
+            if not re.match(r'^\d{10,}$', new_phone):
+                raise PhoneValidationError
+            
+            return func(*args, **kwargs)
+        
+        except PhoneValidationError:
+            print('Invalid phone number. Phone number should contain only digits and be at least 10 digits long.')
+        except NameValidationError:
+            print("Invalid name. Name should contain only letters.")
+        except KeyError:
+            print ("Enter user name")
+        except ValueError:
+            print ("Give me name and phone please")
+        except IndexError:
+            print ("Missing arguments")
+        except Exception as e:
+            print(f"Error in {func.__name__}: {e}")
+
+    return inner
+
 def input_error_name(func):
     def inner(*args, **kwargs):
         try:
@@ -50,12 +81,12 @@ def input_error_name(func):
             print('Invalid phone number. Phone number should contain only digits and be at least 10 digits long.')
         except NameValidationError:
             print("Invalid name. Name should contain only letters.")
-        except KeyError:
-            print ("Enter user name")
-        except ValueError:
-            print ("Give me name please")
-        except IndexError:
-            print ("Missing arguments")
+        # except KeyError:
+        #     print ("Enter user name")
+        # except ValueError:
+        #     print ("Give me name please")
+        # except IndexError:
+        #     print ("Missing arguments")
         except Exception as e:
             print(f"Error in {func.__name__}: {e}")
 

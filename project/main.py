@@ -1,16 +1,11 @@
 from _classes.adress_book import AddressBook
-# from _classes.records import Record
-# from _function.upcoming_birthdays import get_upcoming_birthdays
+# from _classes.record import Record
 from _function.parse import parse_input
 from _function.add_contact import add_contact
 from _function.add_birthday import add_birthday
 from _function.change_contact import change_contact
 from _function.delete_contact import delete_contact
 from _function.show import show_phone, show_all, show_birthday, birthdays
-
-
-
-
 
 
 
@@ -56,6 +51,8 @@ def main():
 
         else:
             print("Invalid command.")
+
+
 
 if __name__ == "__main__":
     main()

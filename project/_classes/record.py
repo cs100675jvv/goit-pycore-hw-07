@@ -1,5 +1,5 @@
-from _classes.fields import Field, Name, Phone, Birthday
-from _decorator.decorator import input_error
+from _classes.fields import Name, Phone, Birthday
+
 
 class Record:
     def __init__(self, name):
@@ -36,7 +36,12 @@ class Record:
     def add_birth(self, birthday):
         birthday_obj = Birthday(birthday)
         self.birthday = birthday_obj
-        return print(f"Birthday for contact {name} updated.")
+        return 
+    
+    # def show_birth(self, birthday):
+    #     birthday_obj = Birthday(birthday)
+    #     # self.birthday = birthday_obj
+    #     return birthday_obj
     
 
     def __str__(self):

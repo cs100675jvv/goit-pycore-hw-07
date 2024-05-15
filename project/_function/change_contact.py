@@ -1,9 +1,9 @@
-from _decorator.decorator import input_error
+from _decorator.decorator import input_error_phones
 from _classes.adress_book import AddressBook
-from _classes.record import Record
+# from _classes.record import Record
 
 
-@input_error
+@input_error_phones
 def change_contact(args, book: 'AddressBook'):
     name, phone, new_phone, *_ = args
     record = book.find(name)
